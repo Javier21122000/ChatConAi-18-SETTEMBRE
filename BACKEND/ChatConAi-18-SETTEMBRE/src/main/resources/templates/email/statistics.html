@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Le tue statistiche</title></head>
+<body style="margin:0;padding:24px;background:#f2f5f9;font-family:Arial,sans-serif;color:#172033">
+<div style="max-width:560px;margin:auto;padding:28px;background:#fff;border-radius:12px">
+    <h1 style="font-size:24px">Le tue statistiche su ChatConAi</h1>
+    <p>Ciao <strong th:text="${username}">utente</strong>, ecco il tuo riepilogo.</p>
+    <table style="width:100%;border-collapse:collapse" aria-label="Statistiche personali">
+        <tr><td style="padding:12px 0">Messaggi inviati</td><td th:text="${stats.sentMessages()}">0</td></tr>
+        <tr><td style="padding:12px 0">Messaggi ricevuti</td><td th:text="${stats.receivedMessages()}">0</td></tr>
+        <tr><td style="padding:12px 0">Chat aperte</td><td th:text="${stats.openChats()}">0</td></tr>
+    </table>
+    <p style="font-size:13px;color:#526079">Una chat è conteggiata quando è stato scambiato almeno un messaggio.</p>
+    <p style="font-size:12px;color:#526079">Generato il <span th:text="${stats.generatedAt()}">data UTC</span> (UTC).</p>
+</div>
+</body>
+</html>
